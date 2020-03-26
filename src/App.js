@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import UserProfile from './components/UserProfile';
+
+const fetchUsers = async () => {
+  const response = await fetch('https://randomuser.me/api/?results=7');
+  const json = await response.json();
+  return json.results;
+}
 
 function App() {
+  const userInfo = fetchUsers();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <UserProfile />
+      <UserProfile />
+      <UserProfile />
+      <UserProfile />
+      <UserProfile />
+      <UserProfile />
+      <UserProfile />
+      <UserProfile />
+      
+      
     </div>
   );
 }
-
 export default App;
